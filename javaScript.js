@@ -19,11 +19,12 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     if(telefone === "") return alert ("Campo obigatório!");
     if(cidade === "") return alert ("Campo obigatório!");
     if(estado === "") return alert ("Campo obigatório!");
-    // tipo sanguineo 
+    if (tipoSanguineo === "") return alert("Selecione um tipo sanguineo!");
     if(nome.length < 3) return alert("Nome inválido");
-    if (sobrenome < 3) return alert("Sobrenome inválido"); 
+    if (sobrenome.length < 3) return alert("Sobrenome inválido"); 
     if (!email.includes("@")) return alert("Email inválido!");
     if (telefone.length < 8) return alert("Número de telefone inválido!");
+    if (isNaN(telefone)) return alert("Informe um número de telefone válido!");
     if (idade < 16) return alert("Você ainda é muito novo para doar sangue!");
     if (peso < 50) return alert("Você precida ter mais de 50kg para poder doar sangue!");
 
