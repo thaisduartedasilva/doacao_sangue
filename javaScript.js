@@ -1,5 +1,6 @@
 document.getElementById("formulario").addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("hey!");
 
     let nome = document.getElementById("nome").value;
     let sobrenome = document.getElementById("sobrenome").value;
@@ -11,18 +12,18 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     let cidade = document.getElementById("cidade").value;
     let estado = document.getElementById("estado").value;
 
-    if(nome === "") return alert ("Campo obigatório!");
-    if(sobrenome === "") return alert ("Campo obigatório!");
-    if(email === "") return alert ("Campo obigatório!");
-    if(idade === "") return alert ("Campo obigatório!");
-    if(peso === "") return alert ("Campo obigatório!");
-    if(telefone === "") return alert ("Campo obigatório!");
-    if(cidade === "") return alert ("Campo obigatório!");
-    if(estado === "") return alert ("Campo obigatório!");
+    if (nome === "") return alert("Campo obigatório!");
+    if (sobrenome === "") return alert("Campo obigatório!");
+    if (email === "") return alert("Campo obigatório!");
+    if (idade === "") return alert("Campo obigatório!");
+    if (peso === "") return alert("Campo obigatório!");
+    if (telefone === "") return alert("Campo obigatório!");
+    if (cidade === "") return alert("Campo obigatório!");
+    if (estado === "") return alert("Campo obigatório!");
     if (tipoSanguineo === "") return alert("Selecione um tipo sanguineo!");
 
-    if(nome.length < 3) return alert("Nome inválido");
-    if (sobrenome.length < 3) return alert("Sobrenome inválido"); 
+    if (nome.length < 3) return alert("Nome inválido");
+    if (sobrenome.length < 3) return alert("Sobrenome inválido");
     if (!email.includes("@")) return alert("Email inválido!");
     if (telefone.length < 8) return alert("Número de telefone inválido!");
     if (isNaN(telefone)) return alert("Informe um número de telefone válido!");
@@ -30,7 +31,8 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     if (peso < 50) return alert("Você precida ter mais de 50kg para poder doar sangue!");
 
     let cadastro = {
-        nome: nome + " " + sobrenome,
+        nome,
+        sobrenome,
         email,
         idade,
         peso,
