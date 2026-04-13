@@ -20,6 +20,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     if(cidade === "") return alert ("Campo obigatório!");
     if(estado === "") return alert ("Campo obigatório!");
     if (tipoSanguineo === "") return alert("Selecione um tipo sanguineo!");
+
     if(nome.length < 3) return alert("Nome inválido");
     if (sobrenome.length < 3) return alert("Sobrenome inválido"); 
     if (!email.includes("@")) return alert("Email inválido!");
@@ -28,7 +29,21 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     if (idade < 16) return alert("Você ainda é muito novo para doar sangue!");
     if (peso < 50) return alert("Você precida ter mais de 50kg para poder doar sangue!");
 
+    let cadastro = {
+        nome: nome + " " + sobrenome,
+        email,
+        idade,
+        peso,
+        tipoSanguineo,
+        telefone,
+        cidade,
+        estado
+    };
 
-    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso ! <br>" + "Nome: " + nome;
+    dados.push(cadastro);
+
+    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso ! <br>" + "Total cadastrados: " + dados.length;
+
+    console.log(dados);
 
 });
