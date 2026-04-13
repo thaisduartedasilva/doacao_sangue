@@ -96,7 +96,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
 
         console.log(dados);
 
-            document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso ! <br>" + "Total cadastrados: " + dados.length;
+            document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso! <br>" + "Total cadastrados: " + dados.length;
 
         return true;
 
